@@ -1,0 +1,212 @@
+:root {
+	--bg: #09090b;
+	--panel: #160b0c;
+	--panel-light: #200f10;
+	--border: #5c1414;
+	--red: #e0201c;
+	--red-dim: #7a1616;
+	--text: #ece6e6;
+	--text-dim: #a89494;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Segoe UI", Arial, sans-serif;
+	background:
+		repeating-linear-gradient(
+			135deg,
+			rgba(224, 32, 28, 0.035) 0px,
+			rgba(224, 32, 28, 0.035) 2px,
+			transparent 2px,
+			transparent 26px
+		),
+		radial-gradient(ellipse at top, #1c0d0d 0%, var(--bg) 65%);
+	color: var(--text);
+	min-height: 100vh;
+}
+
+header {
+	background: var(--panel);
+	border-bottom: 2px solid var(--red);
+	box-shadow: 0 0 24px rgba(224, 32, 28, 0.25);
+	padding: 18px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+header .brand {
+	font-size: 1.3rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	color: var(--red);
+	text-transform: uppercase;
+	text-shadow: 0 0 12px rgba(224, 32, 28, 0.5);
+}
+
+nav {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+nav a {
+	color: var(--text-dim);
+	text-decoration: none;
+	padding: 8px 16px;
+	border-radius: 2px;
+	border: 1px solid transparent;
+	font-size: 0.9rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	transition: all 0.15s ease;
+}
+
+nav a:hover {
+	color: var(--text);
+	background: var(--panel-light);
+	border-color: var(--red-dim);
+}
+
+nav a.active {
+	color: var(--red);
+	border-color: var(--red);
+	background: var(--panel-light);
+}
+
+main {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 40px 24px 80px;
+}
+
+h1 {
+	color: var(--red);
+	font-size: 1.9rem;
+	font-weight: 800;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	margin-bottom: 4px;
+	text-align: center;
+	text-shadow: 0 0 18px rgba(224, 32, 28, 0.35);
+}
+
+.subtitle {
+	text-align: center;
+	color: var(--text-dim);
+	margin-bottom: 40px;
+	font-size: 0.95rem;
+	letter-spacing: 0.03em;
+}
+
+.card {
+	background: var(--panel);
+	border: 1px solid var(--border);
+	border-left: 3px solid var(--red);
+	border-radius: 2px;
+	padding: 24px 28px;
+	margin-bottom: 24px;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+	color: var(--red);
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin-top: 0;
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 10px;
+}
+
+.card p {
+	line-height: 1.6;
+	color: var(--text);
+}
+
+.card ul, .card ol {
+	line-height: 1.8;
+	padding-left: 22px;
+}
+
+.card li {
+	margin-bottom: 6px;
+}
+
+.rule {
+	display: grid;
+	grid-template-columns: 90px 1fr;
+	gap: 14px;
+	padding: 12px 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.rule:last-child {
+	border-bottom: none;
+}
+
+.rule .num {
+	color: var(--red);
+	font-weight: 800;
+	letter-spacing: 0.03em;
+	white-space: nowrap;
+}
+
+.role-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+	margin-top: 12px;
+}
+
+.role {
+	background: var(--panel-light);
+	border: 1px solid var(--border);
+	border-radius: 2px;
+	padding: 14px 16px;
+	position: relative;
+}
+
+.role::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: var(--red-dim);
+}
+
+.role .title {
+	color: var(--red);
+	font-weight: 700;
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 4px;
+}
+
+.role .name {
+	color: var(--text);
+	font-size: 1.05rem;
+}
+
+.role .name.empty {
+	color: var(--text-dim);
+	font-style: italic;
+}
+
+footer {
+	text-align: center;
+	color: var(--text-dim);
+	font-size: 0.85rem;
+	padding: 30px 24px;
+	border-top: 1px solid var(--border);
+}
